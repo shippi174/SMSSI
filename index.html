@@ -18,9 +18,9 @@
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form action="https://cs124.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST"onsubmit="showSuccss()"  id="ticketForm" target="hidden-form">
+<form action="https://cs21.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="showSuccss();"  id="ticketForm" target="hidden-form">
 
-<input type=hidden name="orgid" value="00D3J0000000QkM">
+<input type=hidden name="orgid" value="00Dq0000000EZ8Q">
 <!--input type=hidden name="retURL" value="http://"-->
 
 <!--  ----------------------------------------------------------------------  -->
@@ -30,20 +30,26 @@
 <!--  <input type="hidden" name="debugEmail"                                  -->
 <!--  value="pankaj.singh@extentia.com">                                      -->
 <!--  ----------------------------------------------------------------------  -->
-<h1>Change Request Form</h1>
+<h1>User Request Form</h1>
 <section class="fields-wrapper">
-    <div class="input-group">
+	<div class="input-group">
 		<label for="name">Requester Name<span class="required">*</span></label>
 		<input class="input-style" id="name" maxlength="80" name="name" size="20" type="text" required/>
 	</div>
+	
 	<div class="input-group">
 		<label for="email">Requester Email<span class="required">*</span></label>
 		<input class="input-style" id="email" maxlength="80" name="email" size="20" type="email" oninvalid="this.setCustomValidity('Please Enter valid email')" oninput="setCustomValidity('')" required />
 	</div>
-	
+	<div class="input-group">
+		<label>Category<span class="required">*</span></label>
+		<select class="input-style" id="categoryVal" name="00Nq0000003D9Q2" title="Category" onchange="submitCategory()" required>
+		<option value="IT - User &amp; Access">IT - User &amp; Access</option>
+		</select>
+	</div>
 	<div class="input-group">
 		<label>Office Location<span class="required">*</span></label>
-		<select class="input-style" id="00N3J000000gKOE" name="00N3J000000gKOE" title="Office Location" required>
+		<select class="input-style" id="00Nq0000003DAQX" name="00Nq0000003DAQX" title="Office Location" required>
 		<option value="">--None--</option>
 		<option value="Atlanta - Georgia">Atlanta - Georgia</option>
 		<option value="Beverly Hills - California">Beverly Hills - California</option>
@@ -77,81 +83,69 @@
 		<option value="Youngstown - Ohio">Youngstown - Ohio</option>
 		</select>
 	</div>
-	
-    <div class="input-group">
-		<label>Change Type<span class="required">*</span></label>
-		<select class="input-style" id="00N3J000000haKB" name="00N3J000000haKB" title="Change Type" required>
+	<div class="input-group">
+		<label>This request to<span class="required">*</span></label>
+		<select class="input-style" id="00Nq0000003GkNh" name="00Nq0000003GkNh" title="This request to" required>
 		<option value="">--None--</option>
-		<option value="Employee Pay Rate Change">Employee Pay Rate Change</option>
-		<option value="Site Bill Rate Change">Site Bill Rate Change</option>
-		<option value="Site Post Creation">Site Post Creation</option>
+		<option value="Create a New User">Create a New User</option>
+		<option value="Update an Existing user">Update an Existing user</option>
+		<option value="Terminate a user">Terminate a user</option>
 		</select>
-	</div>
-	<div class="input-group">
-		<label>Category<span class="required">*</span></label>
-		<select class="input-style" id="categoryVal" name="00N3J000000gKNy" title="Category" onchange="submitCategory()" required>
-		<option value="Operations - Change Request">Operations - Change Request</option>
-		</select>
-	</div>
-	</section>
-	<h4>Employee Pay Information</h4>
-	<section class="fields-wrapper">
-	<div class="input-group">
-		<label>Employee Name</label>	
-		<input class="input-style" id="00N3J000000haKE" maxlength="50" name="00N3J000000haKE" size="20" type="text" />
-    </div>
-    <div class="input-group">
-		<label>Employee Number</label>
-		<input class="input-style" id="00N3J000000haKF" maxlength="10" name="00N3J000000haKF" size="20" type="text" />
-    </div>
-	<div class="input-group">
-		<label>Current Pay Rate</label>
-		<input class="input-style" id="00N3J000000haKD" maxlength="50" name="00N3J000000haKD" step='0.01' size="20" type="number" />
-    </div>
-    <div class="input-group">
-		<label>New Pay Rate</label>
-		<input class="input-style" id="00N3J000000haKI" maxlength="50" name="00N3J000000haKI" step='0.01' size="20" type="number"  />
-    </div>
-	
+		</div>
+		
 	<div class="input-group inputWithIcon">
 		<label>Effective Date<span class="required">*</span></label>
 	
-		<span class="dateInput dateOnlyInput"><input class="input-style date-style"  type="text"  id="txtDate"   readonly="readonly" name="00N3J000000haKA"
+		<span class="dateInput dateOnlyInput"><input class="input-style date-style"  type="text"  id="txtDate"   readonly="readonly" name="00Nq0000003GlIg"
           size="12" placeholder="mm/dd/yyyy" required >
 		<i class="fa fa-calendar" aria-hidden="true"></i></span>
 	</div>
+	<div class="input-group">
+		<label for="00Nq0000003GZ1K">User’s Name<span class="required">*</span></label>
+		<input class="input-style" id="00Nq0000003GZ1K" maxlength="100" name="00Nq0000003GZ1K" size="20" type="text" required/>
+	</div>
+	<div class="input-group">
+		<label for="email">User Email<span class="required">*</span></label>
+		<input class="input-style" id="email" maxlength="80" name="00Nq0000003GlIb" size="20" type="email" oninvalid="this.setCustomValidity('Please Enter valid email')" oninput="setCustomValidity('')" required />
+	</div>
+	<div class="input-group">
+		<label for="00Nq0000003GZ1P">User’s Employee Number<span class="required">*</span></label>
+		<input class="input-style" id="00Nq0000003GZ1P" maxlength="100" name="00Nq0000003GZ1P" size="20" type="text" placeholder="Enter 99999 for site" required/ >
+	</div>
+	
+	<div class="input-group">
+	<label>User  Access<span class="required">*</span></label>
+		<select class="input-style" id="netaccess" name="00Nq0000003GZ4i" title="Network  Access" onchange="validate()" required />
+		<option value="">--None--</option>
+        <option value="Webmail Only">Webmail Only</option>
+		<option value="O365 Only">O365 Only</option>
+        <!--option value="Full Network Access">Full Network Access</option-->
+		<option value="RDS/VMware">RDS/VMware</option>
+		</select>
+    </div>
+	
+	<div class="input-group">
+	    <label>Network Drives</label>
+	    <input class="input-style"  id="netdrives" maxlength="50" name="00Nq0000003Gkzo" title="Network  Drives" size="20" type="text"/>
+		<label for="00Nq0000003Gkzo" style="color: red; display: none;">*Required</label>
+		
+		
+	</div>
+	
+
+	<div class="input-group">
+	<label>TrackTik  Access<span class="required">*</span></label>
+		<select class="input-style" id="00Nq0000003GZ4n" name="00Nq0000003GZ4n" title="TrackTik Access" required />
+        <option value="">--None--</option>
+        <option value="Full Region">Full Region</option>
+		<option value="Limited Zone">Limited Zone</option>
+		<option value="Officer Only">Officer Only</option>
+		</select>
+    </div>
 		
 	</section>
-	<h4>Site Information</h4>
-	<section class="fields-wrapper">
-	<div class="input-group">
-		<label>Site Name</label>	
-		<input class="input-style" id="00N3J000000haKL" maxlength="50" name="00N3J000000haKL" size="20" type="text"  />
-    </div>
-    <div class="input-group">
-		<label>Site Number</label>
-		<input class="input-style" id="00N3J000000haKM" maxlength="10" name="00N3J000000haKM" size="20" type="text" />
-    </div>
-	<div class="input-group">
-		<label>Current Bill Rate</label>
-		<input class="input-style" id="00N3J000000haKC" maxlength="50" name="00N3J000000haKC" step='0.01' size="20" type="number"  />
-    </div>
-    <div class="input-group">
-		<label>New Bill Rate</label>
-		<input class="input-style" id="00N3J000000haKH" maxlength="50" name="00N3J000000haKH" step='0.01' size="20" type="number"  />
-    </div>	
-	<div class="input-group">
-		<label>Post Name</label>	
-		<input class="input-style" id="00N3J000000haKJ" maxlength="50" name="00N3J000000haKJ" size="20" type="text"  />
-    </div>
-	<div class="input-group">
-		<label>Reason for the change request<span class="required">*</span></label>	
-		<input class="input-style" id="00N3J000000haKK" maxlength="50" name="00N3J000000haKK" size="20" type="text" required />
-    </div>
-	</section>
 	
-	
-<input type=hidden id="recordType" name="recordType" value="0123J0000008qFNQAY">
+<input type=hidden id="recordType" name="recordType" value="012q0000000618UAAQ">
 <div class="button-wrap">
     <input type="submit" name="submit" >
 </div>
@@ -161,11 +155,36 @@
     The form is submitted successfully please check your email for additional communication about your request.
     <IFRAME style="display:none" name="hidden-form"></IFRAME>
 </section>
+
+
 <script>
+/*function submitCategory() {   
+    var categoryVal = document.getElementById("categoryVal").value;
+    if(categoryVal.startsWith("IT")){
+        document.getElementById("recordType").value = "012q0000000618UAAQ";
+    }else if(categoryVal.startsWith("Operations")){
+        document.getElementById("recordType").value = "012q0000000618eAAA";
+    }
+}
+*/
+function validate() {
+
+         var netaccess = document.getElementById("netaccess").value;
+         var netdrives = document.getElementById("netdrives").value;
+            if (netaccess === "RDS/VMware" && netdrives === "") {
+			    document.querySelector("[for='00Nq0000003Gkzo']").style.display = "block";
+                return false;
+            }
+
+            return true;
+        };
+
 
 function showSuccss() {
-    document.getElementById('ticketForm').classList.add('submitted');
-}
+	  document.getElementById('ticketForm').classList.add('submitted');
+
+};
+
 $(function () {
         $("#txtDate").datepicker({
             dateFormat: 'mm/dd/yy'
